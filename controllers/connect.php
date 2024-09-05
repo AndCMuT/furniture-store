@@ -4,5 +4,5 @@
     $pass = '';
     $db_name = 'furniture_store_db';
 
-    $conn = mysqli_connect($hostname, $user, $pass, $db_name, 80)
+    $conn = mysqli_connect($hostname, $user, $pass, $db_name);
 ?>

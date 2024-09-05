@@ -56,3 +56,28 @@ footer {
 .addres-store {
     max-width: 250px;
 }
+.category {
+    margin: 20px;
+    /* width: 1440px; */
+    height: 800px;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.catalog-h2 {
+    font-size: 3rem;
+}
+.catalog-content {
+    height: 700px;
+}
+.category-ancor {
+    display: flex;
+    height: 200px;
+    width: 300px;
+    /* display: block; */
+    background-color: rgb(144, 203, 255);
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
