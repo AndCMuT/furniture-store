@@ -81,3 +81,25 @@ footer {
     align-items: center;
     justify-content: center;
 }
+.product {
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid rgb(184, 135, 135);
+    border-radius: 5px;
+
+}
+.image-description{
+    display: flex;
+    flex-direction: row;
+}
+.image-description > img {
+    margin: 5px;
+    max-width: 250px;
+    height: 200px;
+}
+.description {
+    max-width: 700px;
+}
