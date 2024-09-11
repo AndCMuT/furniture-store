@@ -8,7 +8,7 @@
         <?php
             while($row = mysqli_fetch_array($res)){
                 //print_r($row['Category_name']);
-                $output = "<a href='category.php?category=$row[category_ID]' class='category-ancor'> $row[Category_name] <a>";
+                $output = "<a href='category.php?category=$row[Category_ID]' class='category-ancor'> $row[Category_name] <a>";
                 print_r($output);
             } 
         ?>
