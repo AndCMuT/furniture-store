@@ -3,23 +3,30 @@
                 JOIN countries ON prts.Country_ID=countries.Country_ID
                 JOIN materials ON prts.Material_ID=materials.Material_ID
                 JOIN colors ON prts.Color_ID=colors.Color_ID
-                JOIN categories ON prts.Category_ID=categories.Category_ID
                 JOIN Prices ON prts.Product_ID=Prices.Product_ID
                 WHERE date_start <= CURRENT_TIMESTAMP
                 AND date_start = (SELECT MAX(date_start) FROM Prices WHERE Product_ID=prts.Product_ID)";
 
 
     if (isset($_GET['category'])) {
+        $cat = $_GET['category'];
         $query .= " AND Category_ID=$_GET[category]";
-
+        $get_cat_name = "SELECT Category_name FROM categories WHERE Category_ID=$cat";
+        $cat_res = mysqli_query($conn, $get_cat_name);
+        $cat_row = mysqli_fetch_array($cat_res);
+            if($cat_row) {
+                $cat_name = $cat_row['Category_name'];
+                $h2 = "Товары категории $cat_name";
+            }
+            else {
+                $h2 = "Категория не найдена";
+            }
     }
-    else {
-
-    }
+   
     $res = mysqli_query($conn, $query);
 ?>
 <content class="page-products">
-<?php print_r("<h2>$row[Category_name]</h2>"); ?>   
+<h2><?php print_r($h2); ?></h2>  
 <?php
     while ($row = mysqli_fetch_array($res)) {
         $output = "<div class='product'>
