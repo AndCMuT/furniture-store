@@ -46,7 +46,7 @@
             <div class='btn-details-buy'>
                 <p>$row[price] руб</p>
                 <a href='#' class='btn-deatais'>Купить</a>
-                <a href='#' class='btn-deatais'>Подробнее</a>
+                <a href='product.php?product=$row[Product_ID]' class='btn-deatais'>Подробнее</a>
             </div>
         </div>";
     print_r($output);
