@@ -10,7 +10,7 @@
 
     if (isset($_GET['category'])) {
         $cat = $_GET['category'];
-        $query .= " AND Category_ID=$_GET[category]";
+        $query .= " AND Category_ID=$cat";
         $get_cat_name = "SELECT Category_name FROM categories WHERE Category_ID=$cat";
         $cat_res = mysqli_query($conn, $get_cat_name);
         $cat_row = mysqli_fetch_array($cat_res);
